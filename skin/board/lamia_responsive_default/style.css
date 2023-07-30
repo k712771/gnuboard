@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.lamia-bbs-wrap {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	--main-font-color: #131313;
+	--light-font-color: #999;
+	--point-color: #ff3300;
+	--line-color: #e3e3e3;
+}
+
+.lamia-bbs-wrap :is(button, input, select, textarea) {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 0 none;
+	background-color: transparent;
+}
+
+.category-selector {
+	min-width: 100px;
+	height: 40px;
+	display: inline-flex;
+	flex-direction: column;
+	position: relative;
+	border: 1px solid var(--line-color);
+	border-radius: 5px;
+}
+.category-selector > .current-display {
+	text-align: left;
+	height: 40px;
+	padding: 0 10px;
+	position: relative;
+}
+.category-selector > .current-display::after {
+	content: '';
+	display: inline-block;
+	width: 0.8em; height: 0.8em;
+	border: solid var(--point-color);
+	border-width: 0 0 2px 2px;
+	position: absolute;
+	top: 50%; right: 0.8em;
+	pointer-events: none;
+	transform: translateY(-50%) rotate(-45deg);
+}
+.category-selector > ul {
+	position: absolute;
+	bottom: 0; left: 0;
+	width: 100%;
+	transform: translateY(100%);
+}
